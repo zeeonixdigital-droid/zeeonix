@@ -1,9 +1,0 @@
-GEMINI_API_KEY=AIza_aapki_api_key_yahan
-
-AQ.Ab8RN6LVuFdJU--n9QYivoi2EIXzZxs7R36kpjLAioU8rcVKvg
-
-
-
-# ─── AI Provider (Phase 6) ───────────────────────────────────────────────────
-# Google Gemini API -- https://aistudio.google.com/apikey
-GEMINI_API_AQ.Ab8RN6LVuFdJU--n9QYivoi2EIXzZxs7R36kpjLAioU8rcVKvg
