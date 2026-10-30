@@ -147,13 +147,13 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
 ];
 
 export const BUDGET_OPTIONS = [
-  { value: 'under-500', label: 'Under ₹500' },
-  { value: '500-2000', label: '₹500 - ₹2,000' },
-  { value: '2000-5000', label: '₹2,000 - ₹5,000' },
-  { value: '5000-15000', label: '₹5,000 - ₹15,000' },
-  { value: '15000-50000', label: '₹15,000 - ₹50,000' },
-  { value: 'above-50000', label: 'Above ₹50,000' },
-  { value: 'custom', label: 'Custom / Not sure' },
+  { value: 'under-500', label: 'Under $500' },
+  { value: '500-1000', label: '$500 – $1,000' },
+  { value: '1000-3000', label: '$1,000 – $3,000' },
+  { value: '3000-5000', label: '$3,000 – $5,000' },
+  { value: '5000-10000', label: '$5,000 – $10,000' },
+  { value: 'above-10000', label: '$10,000+' },
+  { value: 'custom', label: 'Custom / Not Sure' },
 ];
 
 export const DEADLINE_OPTIONS = [
@@ -167,10 +167,7 @@ export const DEADLINE_OPTIONS = [
 export const CONTACT_METHOD_OPTIONS = [
   { value: 'email', label: 'Email' },
   { value: 'whatsapp', label: 'WhatsApp' },
-  { value: 'phone', label: 'Phone call' },
-  { value: 'video-call', label: 'Video call' },
 ];
-
 export const COUNTRIES = [
   'India', 'United States', 'United Kingdom', 'Canada', 'Australia',
   'UAE', 'Saudi Arabia', 'Singapore', 'Bangladesh', 'Pakistan', 'Nepal',
