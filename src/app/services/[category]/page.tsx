@@ -7,7 +7,7 @@ import { SERVICE_GROUPS } from '@/lib/services-data';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 
 interface Props {
-  params: { category: string };
+  params: Promise<{ category: string }>;
 }
 
 export async function generateStaticParams() {
@@ -15,7 +15,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const group = SERVICE_GROUPS.find(g => g.id === params.category);
+  const { category } = await params;
+  const group = SERVICE_GROUPS.find(g => g.id === category);
   if (!group) return { title: 'Service Not Found' };
   return {
     title: group.title,
@@ -23,8 +24,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function ServiceCategoryPage({ params }: Props) {
-  const group = SERVICE_GROUPS.find(g => g.id === params.category);
+export default async function ServiceCategoryPage({ params }: Props) {
+  const { category } = await params;
+  const group = SERVICE_GROUPS.find(g => g.id === category);
   if (!group) notFound();
 
   return (

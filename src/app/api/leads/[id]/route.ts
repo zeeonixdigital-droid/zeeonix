@@ -13,8 +13,9 @@ const UpdateSchema = z.object({
 
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
   const session = await getAdminSessionFromRequest(req);
   if (!session) {
     return NextResponse.json({ error: 'Unauthorised.' }, { status: 401 });
@@ -34,7 +35,7 @@ export async function PATCH(
 
   try {
     const updated = await updateLeadStatusInDB(
-      params.id,
+      id,
       parsed.data.status,
       parsed.data.notes
     );
@@ -56,15 +57,16 @@ export async function PATCH(
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
   const session = await getAdminSessionFromRequest(req);
   if (!session) {
     return NextResponse.json({ error: 'Unauthorised.' }, { status: 401 });
   }
 
   try {
-    const lead = await getLeadByIdFromDB(params.id);
+    const lead = await getLeadByIdFromDB(id);
     if (!lead) {
       return NextResponse.json({ error: 'Lead not found.' }, { status: 404 });
     }
